@@ -6,7 +6,8 @@ namespace NoBodyToBuild {
     public static void Main() {
       RunSampleA1();
       RunSampleA2();
-      RunSampleB();
+      RunSampleB1();
+      RunSampleB2();
       RunSampleC();
       RunSampleD();
     }
@@ -44,14 +45,26 @@ namespace NoBodyToBuild {
       service.When(request);
     }
 
-    static void RunSampleB() {
+    static void RunSampleB1() {
       var teamRockyId = new TeamId(1);
-      var teamRocky = new SampleB.Team(teamRockyId);
+      var teamRocky = new SampleB1.Team(teamRockyId);
       var teamMemberTheHulkId = new TeamMemberId(2);
-      var teamMemberTheHulk = new SampleB.TeamMember(teamRockyId, teamMemberTheHulkId);
-      var teamRepository = new SampleB.TeamRepository(new Dictionary<TeamId, SampleB.Team> { { teamRockyId, teamRocky } });
-      var teamMemberRepository = new SampleB.TeamMemberRepository(new Dictionary<TeamMemberId, SampleB.TeamMember> { { teamMemberTheHulkId, teamMemberTheHulk } });
-      var service = new SampleB.TeamApplicationService(teamRepository, teamMemberRepository);
+      var teamMemberTheHulk = new SampleB1.TeamMember(teamRockyId, teamMemberTheHulkId);
+      var teamRepository = new SampleB1.TeamRepository(new Dictionary<TeamId, SampleB1.Team> { { teamRockyId, teamRocky } });
+      var teamMemberRepository = new SampleB1.TeamMemberRepository(new Dictionary<TeamMemberId, SampleB1.TeamMember> { { teamMemberTheHulkId, teamMemberTheHulk } });
+      var service = new SampleB1.TeamApplicationService(teamRepository, teamMemberRepository);
+      var request = new AppointChairmanRequest { TeamId = 1, TeamMemberId = 2 };
+      service.When(request);
+    }
+
+    static void RunSampleB2() {
+      var teamRockyId = new TeamId(1);
+      var teamRocky = new SampleB2.Team(teamRockyId);
+      var teamMemberTheHulkId = new TeamMemberId(2);
+      var teamMemberTheHulk = new SampleB2.TeamMember(teamRockyId, teamMemberTheHulkId);
+      var teamRepository = new SampleB2.TeamRepository(new Dictionary<TeamId, SampleB2.Team> { { teamRockyId, teamRocky } });
+      var teamMemberRepository = new SampleB2.TeamMemberRepository(new Dictionary<TeamMemberId, SampleB2.TeamMember> { { teamMemberTheHulkId, teamMemberTheHulk } });
+      var service = new SampleB2.TeamApplicationService(teamRepository, teamMemberRepository);
       var request = new AppointChairmanRequest { TeamId = 1, TeamMemberId = 2 };
       service.When(request);
     }

@@ -37,6 +37,13 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SampleB2\ITeamMemberRepository.cs" />
+    <Compile Include="SampleB2\ITeamRepository.cs" />
+    <Compile Include="SampleB2\Team.cs" />
+    <Compile Include="SampleB2\TeamApplicationService.cs" />
+    <Compile Include="SampleB2\TeamMember.cs" />
+    <Compile Include="SampleB2\TeamMemberRepository.cs" />
+    <Compile Include="SampleB2\TeamRepository.cs" />
     <Compile Include="SampleD\AppointChairmanService.cs" />
     <Compile Include="SampleD\IAppointChairmanService.cs" />
     <Compile Include="SampleD\ITeamChairmanshipRepository.cs" />
@@ -67,13 +74,13 @@
     <Compile Include="SampleA1\TeamMember.cs" />
     <Compile Include="SampleA1\TeamMemberRepository.cs" />
     <Compile Include="SampleA1\TeamRepository.cs" />
-    <Compile Include="SampleB\ITeamMemberRepository.cs" />
-    <Compile Include="SampleB\ITeamRepository.cs" />
-    <Compile Include="SampleB\Team.cs" />
-    <Compile Include="SampleB\TeamApplicationService.cs" />
-    <Compile Include="SampleB\TeamMember.cs" />
-    <Compile Include="SampleB\TeamMemberRepository.cs" />
-    <Compile Include="SampleB\TeamRepository.cs" />
+    <Compile Include="SampleB1\ITeamMemberRepository.cs" />
+    <Compile Include="SampleB1\ITeamRepository.cs" />
+    <Compile Include="SampleB1\Team.cs" />
+    <Compile Include="SampleB1\TeamApplicationService.cs" />
+    <Compile Include="SampleB1\TeamMember.cs" />
+    <Compile Include="SampleB1\TeamMemberRepository.cs" />
+    <Compile Include="SampleB1\TeamRepository.cs" />
     <Compile Include="SampleC\IAppointChairmanService.cs" />
     <Compile Include="SampleC\ITeamMemberRepository.cs" />
     <Compile Include="SampleC\ITeamRepository.cs" />

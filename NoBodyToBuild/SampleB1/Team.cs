@@ -1,4 +1,4 @@
-﻿namespace NoBodyToBuild.SampleB {
+﻿namespace NoBodyToBuild.SampleB1 {
   public class Team {
     readonly TeamId _teamId;
     TeamMemberId _chairman;

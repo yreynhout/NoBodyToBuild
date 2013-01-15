@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NoBodyToBuild.SampleB {
+namespace NoBodyToBuild.SampleB2 {
   public class TeamMemberRepository : ITeamMemberRepository {
     readonly Dictionary<TeamMemberId, TeamMember> _storage;
 

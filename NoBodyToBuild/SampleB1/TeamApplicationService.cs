@@ -1,4 +1,4 @@
-﻿namespace NoBodyToBuild.SampleB {
+﻿namespace NoBodyToBuild.SampleB1 {
   public class TeamApplicationService {
     readonly ITeamRepository _teamRepository;
     readonly ITeamMemberRepository _teamMemberRepository;
