@@ -15,4 +15,6 @@ The question is, regardless of this example being absurdly trivial, why would yo
 - information hiding perspective
 - modeling perspective
 - language perspective
+- maintainability perspective
+- readability perspective
 
