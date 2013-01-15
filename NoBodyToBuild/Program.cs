@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 
 namespace NoBodyToBuild {
-  public class Program {
+  public static class Program {
     public static void Main() {
       RunSampleA1();
       RunSampleA2();
       RunSampleB();
       RunSampleC();
+      RunSampleD();
     }
 
     static void RunSampleA1() {
@@ -64,6 +65,20 @@ namespace NoBodyToBuild {
       var teamMemberRepository = new SampleC.TeamMemberRepository(new Dictionary<TeamMemberId, SampleC.TeamMember> { { teamMemberTheHulkId, teamMemberTheHulk } });
       var makeChairmanService = new SampleC.AppointChairmanService(teamRepository, teamMemberRepository);
       var service = new SampleC.TeamApplicationService(makeChairmanService);
+      var request = new AppointChairmanRequest { TeamId = 1, TeamMemberId = 2 };
+      service.When(request);
+    }
+
+    static void RunSampleD() {
+      var teamRockyId = new TeamId(1);
+      var teamRocky = new SampleD.Team(teamRockyId);
+      var teamMemberTheHulkId = new TeamMemberId(2);
+      var teamMemberTheHulk = new SampleD.TeamMember(teamRockyId, teamMemberTheHulkId);
+      var teamRepository = new SampleD.TeamRepository(new Dictionary<TeamId, SampleD.Team> { { teamRockyId, teamRocky } });
+      var teamMemberRepository = new SampleD.TeamMemberRepository(new Dictionary<TeamMemberId, SampleD.TeamMember> { { teamMemberTheHulkId, teamMemberTheHulk } });
+      var teamChairmanshipRepository = new SampleD.TeamChairmanshipRepository(new List<SampleD.TeamChairmanship>());
+      var makeChairmanService = new SampleD.AppointChairmanService(teamRepository, teamMemberRepository, teamChairmanshipRepository);
+      var service = new SampleD.TeamApplicationService(makeChairmanService);
       var request = new AppointChairmanRequest { TeamId = 1, TeamMemberId = 2 };
       service.When(request);
     }
