@@ -1,4 +1,4 @@
-﻿namespace NoBodyToBuild.SampleA {
+﻿namespace NoBodyToBuild.SampleA2 {
   public class TeamApplicationService {
     readonly ITeamRepository _teamRepository;
     readonly ITeamMemberRepository _teamMemberRepository;
@@ -8,11 +8,11 @@
       _teamMemberRepository = teamMemberRepository;
     }
 
-    public void When(MakeChairmanRequest request) {
+    public void When(AppointChairmanRequest request) {
       var team = _teamRepository.Get(new TeamId(request.TeamId));
       var teamMember = _teamMemberRepository.Get(new TeamMemberId(request.TeamMemberId));
 
-      teamMember.MakeChairmanOf(team);
+      teamMember.AppointChairmanOf(team);
     }
   }
 }

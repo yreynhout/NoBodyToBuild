@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 
-namespace NoBodyToBuild.SampleA {
+namespace NoBodyToBuild.SampleA2 {
   public class Team {
     readonly TeamId _teamId;
     readonly List<TeamMemberId> _memberIds;
+
+    TeamMemberId _chairman;
 
     public Team(TeamId teamId) {
       _teamId = teamId;
@@ -14,12 +16,13 @@ namespace NoBodyToBuild.SampleA {
       _memberIds.Add(memberId);
     }
 
-    public void MakeChairman(TeamMember member) {
-      Enforce.That(member.IsPartOf(_teamId), Sorry.NotPartOfTheTeam);
+    bool HasMember(TeamMemberId teamMemberId) {
+      return _memberIds.Contains(teamMemberId);
     }
 
-    public bool HasMember(TeamMemberId teamMemberId) {
-      return _memberIds.Contains(teamMemberId);
+    internal void SetChairman(TeamMemberId teamMemberId) {
+      Enforce.That(HasMember(teamMemberId), Sorry.NotPartOfTheTeam);
+      _chairman = teamMemberId;
     }
   }
 }

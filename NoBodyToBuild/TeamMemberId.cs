@@ -1,5 +1,7 @@
 namespace NoBodyToBuild {
   public class TeamMemberId {
+    public static readonly TeamMemberId NoOne = default(TeamMemberId);
+
     protected bool Equals(TeamMemberId other) {
       return _value == other._value;
     }

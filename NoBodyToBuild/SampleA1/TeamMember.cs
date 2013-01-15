@@ -1,4 +1,4 @@
-﻿namespace NoBodyToBuild.SampleB {
+﻿namespace NoBodyToBuild.SampleA1 {
   public class TeamMember {
     readonly TeamId _teamId;
     readonly TeamMemberId _teamMemberId;
@@ -8,12 +8,9 @@
       _teamMemberId = teamMemberId;
     }
 
-    internal TeamMemberId TeamMemberId {
-      get { return _teamMemberId; }
-    }
-
-    public bool IsPartOf(TeamId teamId) {
-      return _teamId.Equals(teamId);
+    public void AppointChairmanOf(Team team) {
+      Enforce.That(team.HasMember(_teamMemberId), Sorry.NotPartOfTheTeam);
+      team.SetChairman(_teamMemberId);
     }
   }
 }

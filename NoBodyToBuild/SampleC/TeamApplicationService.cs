@@ -1,13 +1,13 @@
 ﻿namespace NoBodyToBuild.SampleC {
   public class TeamApplicationService {
-    readonly IMakeChairmanService _service;
+    readonly IAppointChairmanService _service;
 
-    public TeamApplicationService(IMakeChairmanService service) {
+    public TeamApplicationService(IAppointChairmanService service) {
       _service = service;
     }
 
-    public void When(MakeChairmanRequest request) {
-      _service.MakeChairman(
+    public void When(AppointChairmanRequest request) {
+      _service.AppointChairman(
         new TeamId(request.TeamId), 
         new TeamMemberId(request.TeamMemberId));
     }
