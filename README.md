@@ -23,6 +23,7 @@ The questions are, regardless of this example being absurdly trivial,
 	- language perspective?
 	- maintainability perspective?
 	- readability perspective?
+	- coupling perspective?
 
 - could you motivate why you feel more comfortable with one approach over another or why you think some of them are complete bullocks or would be a bad idea in the long term?
 
