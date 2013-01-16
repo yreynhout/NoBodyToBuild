@@ -27,3 +27,5 @@ The questions are, regardless of this example being absurdly trivial,
 - could you motivate why you feel more comfortable with one approach over another or why you think some of them are complete bullocks or would be a bad idea in the long term?
 
 Feel free to fork, add your own preferred approach, play domain expert and tweak where you see fit.
+
+P.S. Yes, I didn't write tests. Yes, those would have given valuable feedback as well. This is exploration without tests.
