@@ -26,4 +26,4 @@ The questions are, regardless of this example being absurdly trivial,
 
 - could you motivate why you feel more comfortable with one approach over another or why you think some of them are complete bullocks or would be a bad idea in the long term?
 
-Feel free to fork and even add your own preferred approach.
+Feel free to fork, add your own preferred approach, play domain expert and tweak where you see fit.
