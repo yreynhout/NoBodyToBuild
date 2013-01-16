@@ -12,9 +12,10 @@ namespace NoBodyToBuild.SampleD {
       get { return _id; }
     }
 
-    public TeamChairmanship AppointChairman(TeamMember teamMember) {
-      Enforce.That(teamMember.IsPartOf(_id), Sorry.NotPartOfTheTeam);
-      return new TeamChairmanship(_id, teamMember.Id, DateTime.Today);
+    public TeamChairmanship AppointChairman(TeamMember member) {
+      Enforce.That(member.IsPartOf(_id), Sorry.NotPartOfTheTeam);
+      Enforce.That(member.IsMemberSinceAtLeastTwoYears(), Sorry.NotMemberSinceAtLeastTwoYears);
+      return new TeamChairmanship(_id, member.Id, DateTime.Today);
     }
   }
 }

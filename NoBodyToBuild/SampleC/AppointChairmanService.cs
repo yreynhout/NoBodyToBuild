@@ -13,6 +13,7 @@
       var teamMember = _teamMemberRepository.Get(teamMemberId);
 
       Enforce.That(teamMember.IsPartOf(team.Id), Sorry.NotPartOfTheTeam);
+      Enforce.That(teamMember.IsMemberSinceAtLeastTwoYears(), Sorry.NotMemberSinceAtLeastTwoYears);
       team.SetNewChairman(teamMember.Id);
     }
   }

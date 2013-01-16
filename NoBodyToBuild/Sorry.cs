@@ -1,5 +1,6 @@
 ﻿namespace NoBodyToBuild {
   public enum Sorry {
-    NotPartOfTheTeam
+    NotPartOfTheTeam,
+    NotMemberSinceAtLeastTwoYears
   }
 }

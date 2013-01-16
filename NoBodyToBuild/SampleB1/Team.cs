@@ -9,6 +9,7 @@
 
     public void AppointAsChairman(TeamMember member) {
       Enforce.That(member.IsPartOf(_teamId), Sorry.NotPartOfTheTeam);
+      Enforce.That(member.IsMemberSinceAtLeastTwoYears(), Sorry.NotMemberSinceAtLeastTwoYears);
       _chairman = member.TeamMemberId;
     }
   }

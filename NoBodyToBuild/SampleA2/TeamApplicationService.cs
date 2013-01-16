@@ -12,7 +12,7 @@
       var team = _teamRepository.Get(new TeamId(request.TeamId));
       var teamMember = _teamMemberRepository.Get(new TeamMemberId(request.TeamMemberId));
 
-      teamMember.AppointChairmanOf(team);
+      teamMember.AppointAsChairmanOf(team);
     }
   }
 }
