@@ -37,6 +37,15 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SampleE\AppointChairmanService.cs" />
+    <Compile Include="SampleE\IAppointChairmanService.cs" />
+    <Compile Include="SampleE\ITeamMemberRepository.cs" />
+    <Compile Include="SampleE\ITeamRepository.cs" />
+    <Compile Include="SampleE\Team.cs" />
+    <Compile Include="SampleE\TeamApplicationService.cs" />
+    <Compile Include="SampleE\TeamMember.cs" />
+    <Compile Include="SampleE\TeamMemberRepository.cs" />
+    <Compile Include="SampleE\TeamRepository.cs" />
     <Compile Include="SampleB2\ITeamMemberRepository.cs" />
     <Compile Include="SampleB2\ITeamRepository.cs" />
     <Compile Include="SampleB2\Team.cs" />

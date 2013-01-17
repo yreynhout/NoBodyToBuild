@@ -10,6 +10,7 @@ namespace NoBodyToBuild {
       RunSampleB2();
       RunSampleC();
       RunSampleD();
+      RunSampleE();
     }
 
     static void RunSampleA1() {
@@ -92,6 +93,19 @@ namespace NoBodyToBuild {
       var teamChairmanshipRepository = new SampleD.TeamChairmanshipRepository(new List<SampleD.TeamChairmanship>());
       var makeChairmanService = new SampleD.AppointChairmanService(teamRepository, teamMemberRepository, teamChairmanshipRepository);
       var service = new SampleD.TeamApplicationService(makeChairmanService);
+      var request = new AppointChairmanRequest { TeamId = 1, TeamMemberId = 2 };
+      service.When(request);
+    }
+
+    static void RunSampleE() {
+      var teamRockyId = new TeamId(1);
+      var teamRocky = new SampleE.Team(teamRockyId);
+      var teamMemberTheHulkId = new TeamMemberId(2);
+      var teamMemberTheHulk = new SampleE.TeamMember(teamRockyId, teamMemberTheHulkId, new DateTime(2010, 1, 1));
+      var teamRepository = new SampleE.TeamRepository(new Dictionary<TeamId, SampleE.Team> { { teamRockyId, teamRocky } });
+      var teamMemberRepository = new SampleE.TeamMemberRepository(new Dictionary<TeamMemberId, SampleE.TeamMember> { { teamMemberTheHulkId, teamMemberTheHulk } });
+      var makeChairmanService = new SampleE.AppointChairmanService(teamRepository, teamMemberRepository);
+      var service = new SampleE.TeamApplicationService(makeChairmanService);
       var request = new AppointChairmanRequest { TeamId = 1, TeamMemberId = 2 };
       service.When(request);
     }
